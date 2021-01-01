@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.随机生成一个1~10的整数 我们需要用到Math.random()方法。
+    // 2.需要一直猜到正确为止，所以需要一直循环。
+    // 3.while循环更简单
+    // 4.核心算法：使用 if else if 多分支语句来判断大于、小于、等于。
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    // var random = getRandomIntInclusive(1, 10);
+    // while (true) { //没有退出语句的话容易变成死循环
+    //     var num = prompt('你来猜？请输入1~10之间的一个整数');
+    //     if (num > random) {
+    //         alert('你猜大了');
+    //     } else if (num < random) {
+    //         alert('你猜小了');
+    //     } else {
+    //         alert('恭喜你猜对了');
+    //         break; //退出整个循环结束程序
+    //     }
+
+    // }
+    var random = getRandomIntInclusive(1, 50);
+    var i = 1;
+    while (i <= 10) {
+        var num = prompt('你来猜？请输入1~50之间的一个整数，你有10次机会哟,这是第' + i + '次');
+        if (num > random) {
+            alert('你猜大了');
+        } else if (num < random) {
+            alert('你猜小了');
+        } else {
+            alert('恭喜你猜对了');
+            break; //退出整个循环结束程序
+        }
+        i++;
+        if (i > 10) {
+            alert('你的机会已用完，很遗憾您没有猜对！');
+            break; //退出整个循环结束程序
+        }
+
+    }
+</script>
+
+</html>
